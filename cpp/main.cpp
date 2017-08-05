@@ -13,10 +13,11 @@ bool check(Utils::Point<int> cur)
 
 int main()
 {
+	srand(time(NULL));
 	Utils::Point<int> start,finish,origin;
 	start.x=-10;
 	start.y=10;
-	finish.x=100;
+	finish.x=1000;
 	finish.y=730;
 	origin.x=0;
 	origin.y=0;

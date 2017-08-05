@@ -86,7 +86,6 @@ namespace rrt
 			//std::cout<<"check= "<<check<<", count= "<<count<<std::endl;
 		}
 		std::cout<<"Path Not Found"<<std::endl;
-		generatePath(startPoint,endPoint);
 		return false;
 	}
 
@@ -145,7 +144,7 @@ namespace rrt
 		temp.y = origin.y + signY* ( rand() % (int)halfDimensionY );
 
 		Utils::Point<T> closest=findClosestNode(temp);
-		double theta = atan2(temp.x-closest.x,temp.y-closest.y);
+		double theta = atan2(temp.y-closest.y,temp.x-closest.x);
 
 		Utils::Point<T> next;
 		next.x=closest.x+stepLength*cos(theta);
@@ -158,7 +157,7 @@ namespace rrt
 	Utils::Point<T> RRT<T>::generateBiasedPoint()
 	{
 		Utils::Point<T> closest=findClosestNode(endPoint);
-		double theta = atan2(endPoint.x-closest.x,endPoint.y-closest.y);
+		double theta = atan2(endPoint.y-closest.y,endPoint.x-closest.x);
 
 		Utils::Point<T> next;
 		next.x=closest.x+stepLength*cos(theta);

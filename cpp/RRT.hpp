@@ -24,12 +24,10 @@ namespace rrt
 		
 	public:
 		
-		RRT(){
-			srand(time(NULL));
-		};
+		RRT(){};
 		RRT(Utils::Point<T> start,Utils::Point<T> end)
 		{
-			srand(time(NULL));			
+			//srand(time(NULL));			
 			startPoint=start;
 			endPoint=end;
 		}
@@ -45,9 +43,9 @@ namespace rrt
 		virtual void setBiasParameter(unsigned int);
 		virtual void setMaxIterations(int);
 		//TODO : To be implemented in the derived classes
-		virtual void interpolate();
-		virtual void fitVelocityProfile();
-		virtual void pruneTree();
+		// virtual void interpolate();
+		// virtual void fitVelocityProfile();
+		// virtual void pruneTree();
 
 	private:
 		bool (*userCheck)(Utils::Point<T>);
