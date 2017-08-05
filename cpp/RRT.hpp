@@ -44,6 +44,11 @@ namespace rrt
 		virtual void setHalfDimensions(double x,double y);
 		virtual void setBiasParameter(unsigned int);
 		virtual void setMaxIterations(int);
+		//TODO : To be implemented in the derived classes
+		virtual void interpolate();
+		virtual void fitVelocityProfile();
+		virtual void pruneTree();
+
 	private:
 		bool (*userCheck)(Utils::Point<T>);
 		bool checkPoint(Utils::Point<T> pt);
@@ -57,5 +62,12 @@ namespace rrt
 		double dist(Utils::Point<T> a,Utils::Point<T> b);
 	};
 }
+
+//************* ToDo ************* 
+// Implement derived classes for variants of RRT
+// Optimize the generate path and other 
+// Tweak with the parameters to check their effects on runtime and path 
+// Implement Pruning function to keep a check on size of tree
+
 
 #endif
